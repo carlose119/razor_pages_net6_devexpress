@@ -56,8 +56,8 @@ namespace razor_pages_net6.Controllers {
             PopulateModel(course, JsonConvert.DeserializeObject<IDictionary>(values));
             //JsonConvert.PopulateObject(values, course);
 
-            if(!TryValidateModel(course))
-                return BadRequest(VALIDATION_ERROR);
+            /* if(!TryValidateModel(course))
+                return BadRequest(VALIDATION_ERROR); */
 
             await _context.SaveChangesAsync();
             return Ok();
