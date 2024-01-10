@@ -1,0 +1,7 @@
+{
+  "sideEffects": [
+    "../../../esm/localization/currency.js"
+  ],
+  "main": "../../../cjs/ui/filter_builder/utils.js",
+  "module": "../../../esm/ui/filter_builder/utils.js"
+}

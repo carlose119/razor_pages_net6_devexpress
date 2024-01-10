@@ -1,0 +1,56 @@
+@page
+@model razor_pages_net6.Pages.Student.IndexModel
+@{
+    ViewData["Title"] = "Studen page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Students</h1>
+</div>
+
+@* @foreach (var item in Model.ListStudents)
+{
+    <h2 class="card-title">@item.LastName</h2>
+} *@
+
+@(Html.DevExtreme().DataGrid()
+    .ID("gridContainer")
+    .ShowBorders(true)
+    .DataSource(Model.ListStudents)
+    .KeyExpr("ID")
+    .Columns(c => {
+        c.Add().DataField("ID");
+        c.Add().DataField("LastName");
+        c.Add().DataField("FirstMidName");
+        c.Add().DataField("EnrollmentDate");
+    })
+)
+
+@(Html.DevExtreme().DataGrid()
+    .ShowBorders(true)
+    @* .DataSource(d => d.OData()
+        .Version(2)
+        .Url("/Students/Index?handler=ListStudents")
+        .Key("ID")
+    ) *@
+    .DataSource(ds => ds.StaticJson()
+        .Url(Url.Content("/Students/Index?handler=ListStudents"))
+    )
+    .Columns(columns => {
+        columns.Add()
+            .DataField("ID")
+            .Width(50);
+
+        columns.Add()
+            .DataField("LastName")
+            .Width(250);
+
+        columns.Add()
+            .DataField("FirstMidName")
+            .Width(250);
+
+        columns.Add()
+            .DataField("EnrollmentDate")
+            .Width(250);
+    })
+)

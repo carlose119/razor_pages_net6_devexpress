@@ -1,0 +1,16 @@
+{
+  "name": "razor_pages_net6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "devextreme-aspnet-data": "^3.0.0",
+    "devextreme-dist": "23.2"
+  }
+}

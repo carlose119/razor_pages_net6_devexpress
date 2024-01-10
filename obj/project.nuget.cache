@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "dgSpecHash": "ARgUMfuZgLDWBuF2chBqOf162bJ7WKyFokSFgbpLGv85tMXAFhALSRKJ10ogbPkPKLLLEYBfUdQlmGgCHjZjSA==",
+  "success": true,
+  "projectFilePath": "/var/www/html/razor_pages_net6/razor_pages_net6.csproj",
+  "expectedPackageFiles": [
+    "/home/carlos/.nuget/packages/devextreme.aspnet.core/23.2.3/devextreme.aspnet.core.23.2.3.nupkg.sha512",
+    "/home/carlos/.nuget/packages/devextreme.aspnet.data/3.0.0/devextreme.aspnet.data.3.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.csharp/4.4.0/microsoft.csharp.4.4.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.entityframeworkcore/7.0.15/microsoft.entityframeworkcore.7.0.15.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.15/microsoft.entityframeworkcore.abstractions.7.0.15.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.15/microsoft.entityframeworkcore.analyzers.7.0.15.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.entityframeworkcore.design/7.0.15/microsoft.entityframeworkcore.design.7.0.15.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.15/microsoft.entityframeworkcore.relational.7.0.15.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.entityframeworkcore.tools/7.0.15/microsoft.entityframeworkcore.tools.7.0.15.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.caching.abstractions/7.0.0/microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.caching.memory/7.0.0/microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.dependencyinjection/7.0.0/microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.dependencymodel/7.0.0/microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.logging/7.0.0/microsoft.extensions.logging.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/home/carlos/.nuget/packages/mysqlconnector/2.2.5/mysqlconnector.2.2.5.nupkg.sha512",
+    "/home/carlos/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512",
+    "/home/carlos/.nuget/packages/pomelo.entityframeworkcore.mysql/7.0.0/pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
+    "/home/carlos/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "razor_pages_net6 depende de DevExtreme.AspNet.Core (>= 23.1.7), pero no se encontró DevExtreme.AspNet.Core 23.1.7. Se resolvió una mejor coincidencia aproximada de DevExtreme.AspNet.Core 23.2.3.",
+      "libraryId": "DevExtreme.AspNet.Core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
