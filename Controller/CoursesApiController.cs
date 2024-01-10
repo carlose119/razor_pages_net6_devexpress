@@ -54,6 +54,7 @@ namespace razor_pages_net6.Controllers {
         public async Task<IActionResult> Put(int key, string values) {
             var course = await _context.Courses.FirstOrDefaultAsync(item => item.CourseID == key);
             PopulateModel(course, JsonConvert.DeserializeObject<IDictionary>(values));
+            //JsonConvert.PopulateObject(values, course);
 
             if(!TryValidateModel(course))
                 return BadRequest(VALIDATION_ERROR);
