@@ -41,8 +41,8 @@ namespace razor_pages_net6.Controllers {
             var newCourse = new Course();
             PopulateModel(newCourse, JsonConvert.DeserializeObject<IDictionary>(values));
 
-            if(!TryValidateModel(newCourse))
-                return BadRequest(VALIDATION_ERROR);
+            /* if(!TryValidateModel(newCourse))
+                return BadRequest(VALIDATION_ERROR); */
 
             var result = _context.Courses.Add(newCourse);
             await _context.SaveChangesAsync();
