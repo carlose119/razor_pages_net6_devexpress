@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /var/www/html/razor_pages_net6
 build_property._RazorSourceGeneratorDebug = 
 
+[/var/www/html/razor_pages_net6/Pages/Courses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291cnNlcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/var/www/html/razor_pages_net6/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

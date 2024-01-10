@@ -1,0 +1,53 @@
+@page
+@model razor_pages_net6.Pages.Courses.IndexModel
+@{
+    ViewData["Title"] = "Courses page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Courses</h1>
+</div>
+
+
+@(Html.DevExtreme().DataGrid()
+    .ID("gridContainer")
+    .ShowBorders(true)
+    .DataSource(Model.ListCourses)
+    .KeyExpr("CourseID")
+    .Columns(c => {
+        c.Add().DataField("CourseID");
+        c.Add().DataField("Title");
+        c.Add().DataField("Credits");
+    })
+)
+
+@(Html.DevExtreme().DataGrid()
+    .ShowBorders(true)
+    .DataSource(ds => ds.StaticJson()
+        .Url(Url.Content("/Courses/Index?handler=ListCourses"))
+    )
+    .Columns(columns => {
+        columns.Add()
+            .DataField("CourseID")
+            .Width(50);
+
+        columns.Add()
+            .DataField("Title")
+            .Width(250);
+
+        columns.Add()
+            .DataField("Credits")
+            .Width(250);
+    })
+)
+
+@(Html.DevExtreme().DataGrid()
+    .DataSource(ds => ds.Mvc()
+        .Controller("CoursesApi")
+        .Key("CourseID")
+        .LoadAction("Get")
+        .InsertAction("Insert")
+        .UpdateAction("Update")
+        .DeleteAction("Delete")
+    )
+)
