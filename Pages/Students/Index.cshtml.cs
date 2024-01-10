@@ -14,7 +14,7 @@ namespace razor_pages_net6.Pages.Student;
 public class IndexModel : PageModel
 {
     private readonly DBContext _context;
-    public List<Models.Student> ListStudents { get; set; }
+    public List<Models.Student>? ListStudents { get; set; }
 
     public IndexModel(DBContext context)
     {
