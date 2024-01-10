@@ -72,13 +72,29 @@ namespace razor_pages_net6.Controllers {
 
         void PopulateModel(Course course, IDictionary values) {
             if(values.Contains("CourseID"))
-                course.CourseID = Convert.ToInt32(values["OrderId"]);
+                course.CourseID = Convert.ToInt32(values["CourseID"]);
 
             if(values.Contains("Title"))
                 course.Title = values["Title"] != null ? Convert.ToString(values["Title"]) : null;
 
             if(values.Contains("Credits"))
                 course.Credits = Convert.ToInt32(values["Credits"]);
+        }
+
+        // additional actions
+
+        [HttpGet]
+        public object EnrollmentsDetails(int CourseID, DataSourceLoadOptions loadOptions) {
+            return DataSourceLoader.Load(
+                from i in _context.Enrollments
+                where i.CourseID == CourseID
+                select new {
+                    LastName = i.Student.LastName,
+                    FirstMidName = i.Student.FirstMidName,
+                    EnrollmentDate = i.Student.EnrollmentDate
+                },
+                loadOptions
+            );
         }
     }
 }
