@@ -76,3 +76,12 @@
     .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
     .Grouping(g => g.AutoExpandAll(false))
 )
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+<script>
+    function beforeSend(operation, ajaxSettings) {
+        ajaxSettings.headers = {
+            RequestVerificationToken: "@Xsrf.GetAndStoreTokens(Model.HttpContext).RequestToken"
+        };
+    }
+</script>
