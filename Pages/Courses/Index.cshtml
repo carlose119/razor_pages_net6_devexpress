@@ -85,3 +85,79 @@
         };
     }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="data-grid-demo">
+    @(Html.DevExtreme().DataGrid<razor_pages_net6.Models.Course>()
+        .ID("gridContainer2")
+        .ShowBorders(true)
+        .Paging(p => p.Enabled(false))
+        .Editing(e => e.Mode(GridEditMode.Popup)
+            .AllowUpdating(true)
+            .AllowAdding(true)
+            .AllowDeleting(true)
+            .Popup(p => p
+                .Title("Course Info")
+                .ShowTitle(true)
+                .Width(700)
+                .Height(525)
+            )
+            .Form(f => f.Items(items => {
+                items.AddGroup()
+                    .ColCount(2)
+                    .ColSpan(2)
+                    .Items(groupItems => {
+                        @* groupItems.AddSimpleFor(m => m.CourseID); *@
+                        groupItems.AddSimpleFor(m => m.Title);
+                        groupItems.AddSimpleFor(m => m.Credits);
+
+                        @* groupItems.AddSimpleFor(m => m.Notes)
+                            .ColSpan(2)
+                            .Editor(editor => editor.TextArea().Height(100)); *@
+                    });
+
+                @* items.AddGroup()
+                    .Caption("Home Address")
+                    .ColCount(2)
+                    .ColSpan(2)
+                    .Items(groupItems => {
+                        groupItems.AddSimpleFor(m => m.CourseID);
+                        groupItems.AddSimpleFor(m => m.Title);
+                        groupItems.AddSimpleFor(m => m.Credits);
+                    }); *@
+            }))
+        )
+        .Columns(columns => {
+            columns.AddFor(m => m.CourseID)
+                .Width(70)
+                .Lookup(lookup => lookup
+                    .DataSource(d => d.Mvc().Controller("CoursesApi").LoadAction("Get").Key("CourseID"))
+                    .DisplayExpr("Title")
+                    .ValueExpr("CourseID")
+                );
+
+            columns.AddFor(m => m.Title);
+
+            columns.AddFor(m => m.Credits);
+        })
+        .DataSource(d => d.Mvc()
+            .Controller("CoursesApi")
+            .LoadAction("Get")
+            .UpdateAction("Put")
+            .InsertAction("Post")
+            .DeleteAction("Delete")
+            .Key("CourseID")
+        )
+    )
+</div>
