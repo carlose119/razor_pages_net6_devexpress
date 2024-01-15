@@ -35,6 +35,7 @@ namespace razor_pages_net6.Controllers {
             var skip = loadOptions.Skip;
             var take = loadOptions.Take;
             var sort = loadOptions.Sort;
+            var filter = loadOptions.Filter;
 
             var courses = _context.Courses.Select(i => new {
                 i.CourseID,
