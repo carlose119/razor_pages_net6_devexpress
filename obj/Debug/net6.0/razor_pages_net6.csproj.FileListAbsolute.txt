@@ -54,3 +54,10 @@
 /var/www/html/razor_pages_net6/bin/Debug/net6.0/System.Text.Encodings.Web.dll
 /var/www/html/razor_pages_net6/bin/Debug/net6.0/System.Text.Json.dll
 /var/www/html/razor_pages_net6/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+/var/www/html/razor_pages_net6/bin/Debug/net6.0/Microsoft.AspNet.OData.dll
+/var/www/html/razor_pages_net6/bin/Debug/net6.0/System.Net.Http.Formatting.dll
+/var/www/html/razor_pages_net6/bin/Debug/net6.0/System.Web.Http.dll
+/var/www/html/razor_pages_net6/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
+/var/www/html/razor_pages_net6/bin/Debug/net6.0/Microsoft.OData.Core.dll
+/var/www/html/razor_pages_net6/bin/Debug/net6.0/Microsoft.OData.Edm.dll
+/var/www/html/razor_pages_net6/bin/Debug/net6.0/Microsoft.Spatial.dll

@@ -1,5 +1,7 @@
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
+using DevExtreme.AspNet.Mvc.Builders.DataSources;
+using Microsoft.AspNet.OData.Query;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -108,5 +110,6 @@ namespace razor_pages_net6.Controllers {
                 loadOptions
             );
         }
+
     }
 }
