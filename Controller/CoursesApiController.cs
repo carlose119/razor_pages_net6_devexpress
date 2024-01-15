@@ -23,9 +23,19 @@ namespace razor_pages_net6.Controllers {
 
         const string VALIDATION_ERROR = "The request failed due to a validation error";
 
+        public string getTake { get; set; }
+
         // Load Courses according to load options
         [HttpGet]
         public async Task<IActionResult> Get(DataSourceLoadOptions loadOptions) {
+
+            if ( Request.Query["take"].Count > 0 && !string.IsNullOrEmpty(Request.Query["take"][0]) ) {
+                getTake = Request.Query["take"][0];
+            }
+            var skip = loadOptions.Skip;
+            var take = loadOptions.Take;
+            var sort = loadOptions.Sort;
+
             var courses = _context.Courses.Select(i => new {
                 i.CourseID,
                 i.Title,

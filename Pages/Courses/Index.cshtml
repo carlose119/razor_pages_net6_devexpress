@@ -50,7 +50,7 @@
         .UpdateAction("Put")
         .DeleteAction("Delete")
     )
-    //.RemoteOperations(true)//para enviar la petición en cada interacción
+    .RemoteOperations(true)//para enviar la petición en cada interacción
     .FilterRow(f => f.Visible(true))
     .HeaderFilter(f => f.Visible(true))
     .GroupPanel(p => p.Visible(true))
