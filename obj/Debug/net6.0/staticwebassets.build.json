@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "f3TKnHmq1p73fRPy6Jp/fiOHx9JrK24B7cx7i9SGg/U=",
+  "Hash": "HC+Hypl77bxbxgQ3ZG06YtoSnz8rPReKvcIHdXh5TFg=",
   "Source": "razor_pages_net6",
   "BasePath": "_content/razor_pages_net6",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/devextreme/dx.light.css"
+    },
+    {
+      "Identity": "/var/www/html/razor_pages_net6/wwwroot/css/devextreme/dx.material.blue.light.css",
+      "SourceId": "razor_pages_net6",
+      "SourceType": "Discovered",
+      "ContentRoot": "/var/www/html/razor_pages_net6/wwwroot/",
+      "BasePath": "_content/razor_pages_net6",
+      "RelativePath": "css/devextreme/dx.material.blue.light.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/devextreme/dx.material.blue.light.css"
     },
     {
       "Identity": "/var/www/html/razor_pages_net6/wwwroot/css/devextreme/fonts/Roboto-300.ttf",

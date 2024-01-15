@@ -50,6 +50,11 @@
       "destination": "wwwroot/css/devextreme/"
     },
     {
+      "library": "node_modules/devextreme-dist/css/dx.material.blue.light.css",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/devextreme/"
+    },
+    {
       "library": "node_modules/devextreme-dist/css/icons/",
       "provider": "filesystem",
       "destination": "wwwroot/css/devextreme/icons"
