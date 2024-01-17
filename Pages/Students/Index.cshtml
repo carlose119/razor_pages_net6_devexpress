@@ -138,7 +138,28 @@
     }
 </script>
 
+@{
+    var cursos = Model.ListStudents.ToArray();
+}
+@(Html.DevExtreme().SelectBox()
+    .DataSource(cursos)
+    .Value(cursos[0])
+    .InputAttr("aria-label", "Status")
+    .OnValueChanged(@<text>
+        function(data) {
+            var dataGrid = $("#gridRazorStudents").dxDataGrid("instance");
+            if (data.value == "All")
+                dataGrid.clearFilter();
+            else
+                dataGrid.filter(["ID", "=", data.value]);
+        }
+    </text>)
+    .DisplayExpr("LastName")
+    .ValueExpr("ID")
+)
+
 @(Html.DevExtreme().DataGrid<razor_pages_net6.Models.Student>()
+    .ID("gridRazorStudents")
     .DataSource(ds => ds.RemoteController()
         .LoadUrl(Url.Page(null, "GridData")) // access to the GridData handler defined in the OnGetGridData method in the page model
         .UpdateUrl(Url.Page(null, "GridRow")) // access to the GridRow handler defined in the OnPutGridRow method in the page model
