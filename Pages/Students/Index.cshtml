@@ -26,6 +26,8 @@
     })
 )
 
+<br/><br/><br/>
+
 @(Html.DevExtreme().DataGrid()
     .ShowBorders(true)
     @* .DataSource(d => d.OData()
@@ -52,5 +54,74 @@
         columns.Add()
             .DataField("EnrollmentDate")
             .Width(250);
+    })
+)
+
+<br/><br/><br/>
+
+<div class="left-side">
+    <div class="logo">
+        <img src="https://js.devexpress.com/Demos/NetCore/images/DataGrid/logo-devav.png" />
+        <img src="https://js.devexpress.com/Demos/NetCore/images/DataGrid/logo-tasks.png" />
+    </div>
+</div>
+<div class="right-side">
+    @{
+        //var statuses = new[] { "All", "Not Started", "In Progress", "Need Assistance", "Deferred", "Completed" };
+        //var statuses = Model.ListCourses.Select(x => ("Key: " + x.Key + ", Value: " + x.Value)).ToArray();
+        var statuses = Model.ListCourses.ToArray();
+    }
+    @(Html.DevExtreme().SelectBox()
+        .DataSource(statuses)
+        .Value(statuses[0])
+        .InputAttr("aria-label", "Status")
+        .OnValueChanged(@<text>
+            function(data) {
+                var dataGrid = $("#gridStudents").dxDataGrid("instance");
+                if (data.value == "All")
+                    dataGrid.clearFilter();
+                else
+                    dataGrid.filter(["inscripto", "=", data.value]);
+            }
+        </text>)
+        .DisplayExpr("Value")
+        .ValueExpr("Key")
+    )
+</div>
+
+@(Html.DevExtreme().DataGrid()
+    .ID("gridStudents")
+    @* .DataSource(ds => ds.StaticJson()
+        .Url(Url.Content("/Students/Index?handler=ListStudentsDevExpress"))
+    ) *@
+    .DataSource(ds => ds.Mvc()
+        .Controller("CoursesApi")
+        .Key("ID")
+        .LoadAction("GetListStudentsDevExpress")
+    )
+    .RemoteOperations(true)//para enviar la petición en cada interacción
+    .RemoteOperations(true)//para enviar la petición en cada interacción
+    .ColumnAutoWidth(true)
+    .ShowBorders(true)
+    .Columns(columns => {
+        columns.Add()
+            .DataField("ID")
+            .Width(80);
+
+        columns.Add()
+            .Caption("Nombre")
+            .DataField("LastName")
+            .DataType(GridColumnDataType.Date);
+
+        columns.Add()
+            .Caption("Apellido")
+            .DataField("FirstMidName")
+            .CssClass("employee")
+            .AllowSorting(false);
+
+        columns.Add()
+            .Caption("Fecha de inscripción")
+            .DataField("EnrollmentDate")
+            .Width(350);
     })
 )
