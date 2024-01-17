@@ -1,5 +1,6 @@
 @page
 @model razor_pages_net6.Pages.Student.IndexModel
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
 @{
     ViewData["Title"] = "Studen page";
 }
@@ -124,4 +125,36 @@
             .DataField("EnrollmentDate")
             .Width(350);
     })
+)
+
+<br/><br/><br/>
+<h2>Razor Page Handlers</h2>
+
+<script>
+    function grid_dataSource_beforeSend(op, ajax) {
+        ajax.headers = {
+            RequestVerificationToken: "@Xsrf.GetAndStoreTokens(Model.HttpContext).RequestToken"
+        };
+    }
+</script>
+
+@(Html.DevExtreme().DataGrid<razor_pages_net6.Models.Student>()
+    .DataSource(ds => ds.RemoteController()
+        .LoadUrl(Url.Page(null, "GridData")) // access to the GridData handler defined in the OnGetGridData method in the page model
+        .UpdateUrl(Url.Page(null, "GridRow")) // access to the GridRow handler defined in the OnPutGridRow method in the page model
+        .Key("ID")
+        .OnBeforeSend("grid_dataSource_beforeSend") // passes an antiforgery token
+    )
+    .RemoteOperations(true)
+    .Columns(columns => {
+        columns.AddFor(m => m.ID);
+        columns.AddFor(m => m.LastName);
+        columns.AddFor(m => m.FirstMidName);
+        columns.AddFor(m => m.EnrollmentDate);
+    })
+    .Editing(e => e
+        .AllowUpdating(true)
+        //.AllowAdding(true)
+        //.AllowDeleting(true)
+    )
 )
