@@ -19,8 +19,8 @@
     @* Uncomment to use the Diagram control *@
     @*<link href="~/css/devextreme/dx-diagram.css" rel="stylesheet" />*@
 
-    <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
-    <link href="~/css/devextreme/dx.material.blue.light.css" rel="stylesheet" />
+    <!--<link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
+    <link href="~/css/devextreme/dx.material.blue.light.css" rel="stylesheet" />-->
 
     @* Uncomment to use the Gantt control *@ 
     @*<script src="~/js/devextreme/dx-gantt.js"></script>*@
@@ -28,7 +28,7 @@
     @* Uncomment to use the Diagram control *@
     @*<script src="~/js/devextreme/dx-diagram.js"></script>*@
 
-    <script src="~/js/devextreme/jquery.js"></script>
+    <!--<script src="~/js/devextreme/jquery.js"></script>-->
 
     @* Uncomment to use Globalize for localization *@
     @*<script src="~/js/devextreme/cldr.js"></script>*@
@@ -44,15 +44,18 @@
     @* Uncomment to enable client-side export *@
     @*<script src="~/js/devextreme/jszip.js"></script>*@
 
-    <script src="~/js/devextreme/dx.all.js"></script>
+    <!--<script src="~/js/devextreme/dx.all.js"></script>-->
 
     @* Uncomment to provide geo-data for the VectorMap control *@
     @*<script src="~/js/devextreme/vectormap-data/world.js"></script>*@
 
-    <script src="~/js/devextreme/dx.aspnet.mvc.js"></script> 
-    <script src="~/js/devextreme/dx.aspnet.data.js"></script>
+    <!--<script src="~/js/devextreme/dx.aspnet.mvc.js"></script> 
+    <script src="~/js/devextreme/dx.aspnet.data.js"></script>-->
+
+    <link rel="stylesheet" href="~/css/vendor.css" />
+    <script src="~/js/vendor.js"></script>
 </head>
-<body>
+<body class="dx-viewport">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -75,10 +78,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Courses/Index">Courses</a>
                         </li>
-                        @* <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Instructors/Index">Instructors</a>
-                        </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Designer/Index">Designer</a>
+                        </li>
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Departments/Index">Departments</a>
                         </li> *@
                     </ul>

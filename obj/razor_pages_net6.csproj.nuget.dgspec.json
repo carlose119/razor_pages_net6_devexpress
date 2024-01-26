@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/var/www/html/razor_pages_net6/razor_pages_net6.csproj": {}
+    "C:\\xampp\\htdocs\\razor_pages_net6_devexpress\\razor_pages_net6.csproj": {}
   },
   "projects": {
-    "/var/www/html/razor_pages_net6/razor_pages_net6.csproj": {
+    "C:\\xampp\\htdocs\\razor_pages_net6_devexpress\\razor_pages_net6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/var/www/html/razor_pages_net6/razor_pages_net6.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\razor_pages_net6_devexpress\\razor_pages_net6.csproj",
         "projectName": "razor_pages_net6",
-        "projectPath": "/var/www/html/razor_pages_net6/razor_pages_net6.csproj",
-        "packagesPath": "/home/carlos/.nuget/packages/",
-        "outputPath": "/var/www/html/razor_pages_net6/obj/",
+        "projectPath": "C:\\xampp\\htdocs\\razor_pages_net6_devexpress\\razor_pages_net6.csproj",
+        "packagesPath": "C:\\Users\\carlos\\.nuget\\packages\\",
+        "outputPath": "C:\\xampp\\htdocs\\razor_pages_net6_devexpress\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages"
+        ],
         "configFilePaths": [
-          "/home/carlos/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 23.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +45,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "BuildBundlerMinifier": {
+              "target": "Package",
+              "version": "[3.2.449, )"
+            },
+            "DevExpress.AspNetCore.Reporting": {
+              "target": "Package",
+              "version": "[23.2.3, )"
+            },
             "DevExtreme.AspNet.Core": {
               "target": "Package",
               "version": "[23.1.7, )"
@@ -66,6 +81,10 @@
               "target": "Package",
               "version": "[7.0.15, )"
             },
+            "Microsoft.Web.LibraryManager.Build": {
+              "target": "Package",
+              "version": "[2.1.175, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -90,7 +109,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.418/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

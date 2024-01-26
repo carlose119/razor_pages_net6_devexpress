@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using razor_pages_net6.Data;
+using DevExpress.AspNetCore;
+using DevExpress.AspNetCore.Reporting;
+using DevExpress.XtraReports.Web.Extensions;
+using razor_pages_net6.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,16 @@ builder.Services.AddRazorPages();
 
 //devexpress - garantiza una serialización JSON adecuada
 builder.Services.AddRazorPages().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+builder.Services.AddDevExpressControls();
+builder.Services.AddMvc();
+builder.Services.AddScoped<ReportStorageWebExtension, CustomReportStorageWebExtension>();
+builder.Services.ConfigureReportingServices(configurator =>
+{
+    configurator.ConfigureWebDocumentViewer(viewerConfigurator =>
+    {
+        viewerConfigurator.UseCachedReportSourceBuilder();
+    });
+});
 
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
 builder.Services.AddDbContext<DBContext>(
@@ -39,6 +53,8 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
     DbInitializer.Initialize(context);
 }
+
+app.UseDevExpressControls();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

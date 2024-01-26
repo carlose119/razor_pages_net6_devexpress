@@ -1,0 +1,14 @@
+@page
+@using razor_pages_net6.PredefinedReports
+@model IndexModel
+
+<link rel="stylesheet" href="~/css/reporting.designer.part.bundle.css" />
+<script src="~/js/reporting.designer.part.bundle.js"></script>
+ 
+@(Html.DevExpress().ReportDesigner("reportDesigner")
+    .Height("1000px")
+        .Bind(new PredefinedReports.TestReport()))
+
+@* @Html.DevExpress().WebDocumentViewer("DocumentViewer").Height("1000px").Bind(new TestReport()) *@
+
+@* @Html.DevExpress().ReportDesigner("reportDesigner2").Height("1000px").Bind(new XtraReport2()) *@

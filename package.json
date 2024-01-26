@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "devextreme-aspnet-data": "^3.0.0",
-    "devextreme-dist": "23.2"
+    "devextreme-dist": "23.2",
+    "@devexpress/analytics-core": "23.2.*",
+    "devexpress-reporting": "23.2.*"
   }
 }
